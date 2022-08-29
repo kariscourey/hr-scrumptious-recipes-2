@@ -5,11 +5,15 @@ from recipes.views import (
     change_recipe,
     log_rating,
     show_recipe,
-    show_recipes,
+    # show_recipes,
+    RecipeListView,
 )
 
 urlpatterns = [
-    path("", show_recipes, name="recipes_list"),
+    # path("", show_recipes, name="recipes_list"),
+    path("", RecipeListView.as_view(), name="recipes_list"),
+    # We're calling the as_view function on the CarListView class to
+    # turn the class into a view that path can use.
     path("<int:pk>/", show_recipe, name="recipe_detail"),
     path("new/", create_recipe, name="recipe_new"),
     path("edit/", change_recipe, name="recipe_edit"),
