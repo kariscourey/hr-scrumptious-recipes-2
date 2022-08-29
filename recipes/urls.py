@@ -10,8 +10,10 @@ from recipes.views import (
     RecipeDetailView,
     RecipeCreateView,
     RecipeUpdateView,
+    RecipeDeleteView,
 )
 
+# recipe_XXXX url patterns defined here!!
 urlpatterns = [
     # path("", show_recipes, name="recipes_list"),
     path("", RecipeListView.as_view(), name="recipes_list"),
@@ -24,4 +26,5 @@ urlpatterns = [
     # path("edit/", change_recipe, name="recipe_edit"),
     path("<int:pk>/edit/", RecipeUpdateView.as_view(), name="recipe_edit"),
     path("<int:recipe_id>/ratings/", log_rating, name="recipe_rating"),
+    path("<int:pk>/delete/", RecipeDeleteView.as_view(), name="recipe_delete"),
 ]
