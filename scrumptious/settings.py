@@ -27,7 +27,7 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False  # False = what user sees, True = what developer sees
 
 ALLOWED_HOSTS = ["localhost", ".herokuapp.com"]
 
