@@ -73,6 +73,7 @@ class RecipeUpdateView(UpdateView):
 class RecipeListView(ListView):
     model = Recipe
     template_name = "recipes/list.html"
+    paginate_by = 10
 
 
 # def show_recipe(request, pk):
